@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@color/colorNoteBackground"
+              android:paddingLeft="@dimen/default_padding"
+              android:paddingRight="@dimen/default_padding">
+
+    <TextView
+        android:id="@+id/reminder_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:text="@string/dummy_reminder_subject"
+        android:textColor="@color/colorDefaultFont"
+        android:textSize="@dimen/reminder_list_item_subject_font_size"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/reminder_body_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:text="@string/dummy_reminder_body"
+        android:textColor="@color/colorDefaultFont"/>
+
+</LinearLayout>

@@ -2,4 +2,8 @@
 <resources>
 
     <dimen name="default_padding">16dp</dimen>
+
+    <!-- Font sizes !-->
+    <dimen name="reminder_list_item_subject_font_size">18sp</dimen>
+    <dimen name="reminder_list_item_body_font_size">14sp</dimen>
 </resources>
