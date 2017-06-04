@@ -2,6 +2,8 @@ package garrymckee.mellobit.com.gentlereminder.UI;
 
 import android.content.Context;
 
+import java.util.UUID;
+
 import Model.Reminder;
 import Model.ReminderRepository;
 
@@ -25,5 +27,10 @@ public class ReminderPresenter implements PresenterContract.ReminderPresenter {
     @Override
     public void setReminder(Reminder reminder) {
         mReminderRepository.updateReminder(reminder);
+    }
+
+    @Override
+    public void deleteReminder(UUID uuid) {
+        mReminderRepository.deleteReminder(uuid);
     }
 }

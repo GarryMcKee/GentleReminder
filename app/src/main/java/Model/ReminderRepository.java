@@ -108,6 +108,13 @@ public class ReminderRepository {
                 new String[] {uuid});
     }
 
+    public void deleteReminder(UUID uuid) {
+        String uuidString = uuid.toString();
+        mDatabase.delete(ReminderDataBaseSchema.ReminderTable.NAME,
+                ReminderDataBaseSchema.ReminderTable.Cols.UUID + " = ?",
+                new String[] {uuidString});
+    }
+
     public ReminderCursorWrapper queryReminders(String whereClause, String[] whereArgs) {
         Cursor cursor = mDatabase.query(
                 ReminderDataBaseSchema.ReminderTable.NAME,

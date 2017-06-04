@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -67,10 +68,26 @@ public class ReminderFragment extends Fragment {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.delete_reminder_item :
+                UUID reminderId = getReminderId();
+                mPresenter.deleteReminder(reminderId);
+                getActivity().finish();
+                break;
+            case R.id.add_reminder_button:
+                //Add Reminder
+                break;
+        }
+
+        return true;
+    }
+
+    @Override
     public void onPause() {
         super.onPause();
 
-        UUID reminderId = (UUID) getArguments().getSerializable(ARGS_REMINDER_ID);
+        UUID reminderId = getReminderId();
         String subject = reminderSubjectEditText.getText().toString();
         String body = reminderBodyEditText.getText().toString();
 
@@ -81,5 +98,9 @@ public class ReminderFragment extends Fragment {
 
         mPresenter.setReminder(reminder);
         Log.d("CHECKSAVE", "Saved reminder!");
+    }
+
+    private UUID getReminderId() {
+        return (UUID) getArguments().getSerializable(ARGS_REMINDER_ID);
     }
 }

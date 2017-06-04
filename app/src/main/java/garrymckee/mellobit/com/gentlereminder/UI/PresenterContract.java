@@ -1,6 +1,7 @@
 package garrymckee.mellobit.com.gentlereminder.UI;
 
 import java.util.List;
+import java.util.UUID;
 
 import Model.Reminder;
 
@@ -19,5 +20,6 @@ public interface PresenterContract {
     interface ReminderPresenter {
         Reminder getReminder();
         void setReminder(Reminder reminder);
+        void deleteReminder(UUID id);
     }
 }
