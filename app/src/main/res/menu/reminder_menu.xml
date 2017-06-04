@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/delete_reminder_item"
+        android:title="@string/delete_reminder"
+        android:icon="@drawable/ic_delete_reminder"
+        app:showAsAction="ifRoom|withText"/>
+
+    <item
+        android:id="@+id/set_reminder_alarm_item"
+        android:title="@string/set_reminder_alarm"
+        android:icon="@drawable/ic_add_reminder_alarm"
+        app:showAsAction="ifRoom|withText" />
+</menu>

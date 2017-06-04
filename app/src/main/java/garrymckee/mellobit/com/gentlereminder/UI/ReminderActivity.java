@@ -16,12 +16,12 @@ import garrymckee.mellobit.com.gentlereminder.R;
 public class ReminderActivity extends AppCompatActivity {
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder);
 
         FragmentManager fm = getSupportFragmentManager();
-        ReminderFragment fragment = new ReminderFragment();
+        Fragment fragment = new ReminderFragment();
         fm.beginTransaction()
                 .add(R.id.reminder_fragment_container, fragment)
                 .commit();

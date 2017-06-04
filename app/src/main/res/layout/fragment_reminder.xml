@@ -2,6 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+    android:padding="@dimen/default_padding">
+
+    <EditText
+        android:id="@+id/reminder_edit_subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="24sp"
+        android:hint="Subject"/>
+
+    <EditText
+        android:id="@+id/reminder_edit_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Body"
+        />
 
 </LinearLayout>

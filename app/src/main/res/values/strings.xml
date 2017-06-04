@@ -2,4 +2,8 @@
     <string name="app_name">Gentle Reminder</string>
     <string name="dummy_reminder_subject">Note to Diane</string>
     <string name="dummy_reminder_body">Diane, I arrived today in Twin Peaks. An interesting little mountain town, full of trees...</string>
+
+    <!-- Menu Titles !-->
+    <string name="delete_reminder">Delete Reminder</string>
+    <string name="set_reminder_alarm">Set Reminder Alarm</string>
 </resources>

@@ -13,7 +13,6 @@ public class ReminderListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reminder_list);
-
         FragmentManager fm = getSupportFragmentManager();
         Fragment reminderListFragment = new ReminderListFragment();
         fm.beginTransaction()

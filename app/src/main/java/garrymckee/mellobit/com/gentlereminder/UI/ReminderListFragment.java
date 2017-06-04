@@ -1,7 +1,9 @@
 package garrymckee.mellobit.com.gentlereminder.UI;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -27,6 +29,7 @@ public class ReminderListFragment extends Fragment {
     private ReminderListFragmentPresenter mPresenter;
 
     @BindView(R.id.reminder_list) RecyclerView reminderListView;
+    @BindView(R.id.add_reminder_button) FloatingActionButton addReminderButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,6 +43,14 @@ public class ReminderListFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_reminder_list, container, false);
         ButterKnife.bind(this, v);
         refreshUi();
+
+        addReminderButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ReminderActivity.class);
+                startActivity(intent);
+            }
+        });
 
         return v;
     }
