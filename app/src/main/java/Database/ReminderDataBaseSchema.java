@@ -6,11 +6,14 @@ package Database;
 
 public class ReminderDataBaseSchema {
 
-    public static final String NAME = "reminderDB";
-
     public class ReminderTable {
-        public class Cols {
+        public static final String NAME = "reminders";
 
+        public class Cols {
+            public static final String UUID = "uuid";
+            public static final String SUBJECT = "subject";
+            public static final String BODY = "body";
+            public static final String DATE = "date";
         }
     }
 }

@@ -1,5 +1,7 @@
 package garrymckee.mellobit.com.gentlereminder.UI;
 
+import android.content.Context;
+
 import java.util.List;
 
 import Model.Reminder;
@@ -12,9 +14,10 @@ import Model.ReminderRepository;
 public class ReminderListFragmentPresenter implements PresenterContract.ReminderListPresenter{
 
     private ReminderRepository mReminderRepository;
+    private Context mContext;
 
-    public ReminderListFragmentPresenter() {
-        mReminderRepository = ReminderRepository.getInstance();
+    public ReminderListFragmentPresenter(Context context) {
+        mReminderRepository = ReminderRepository.getInstance(context);
     }
 
     @Override
