@@ -80,11 +80,14 @@ public class ReminderListFragment extends Fragment {
         public ReminderViewHolder(View view) {
             super(view);
             ButterKnife.bind(this, view);
+            view.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
             Reminder reminder = mPresenter.getReminderAt(this.getAdapterPosition());
+            Intent intent = ReminderActivity.getIntent(getActivity(), reminder.getUUID());
+            startActivity(intent);
         }
     }
 

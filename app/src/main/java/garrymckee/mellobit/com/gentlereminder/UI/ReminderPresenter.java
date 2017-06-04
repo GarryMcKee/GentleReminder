@@ -20,8 +20,8 @@ public class ReminderPresenter implements PresenterContract.ReminderPresenter {
     }
 
     @Override
-    public Reminder getReminder() {
-        return null;
+    public Reminder getReminder(UUID id) {
+        return mReminderRepository.getReminder(id);
     }
 
     @Override

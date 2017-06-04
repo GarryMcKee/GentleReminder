@@ -56,8 +56,11 @@ public class ReminderFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Reminder reminder = mPresenter.getReminder(getReminderId());
         View v = inflater.inflate(R.layout.fragment_reminder, container, false);
         ButterKnife.bind(this, v);
+        reminderSubjectEditText.setText(reminder.getSubject());
+        reminderBodyEditText.setText(reminder.getBody());
         return v;
     }
 

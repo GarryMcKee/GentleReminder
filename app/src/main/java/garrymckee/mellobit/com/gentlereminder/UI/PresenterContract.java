@@ -18,7 +18,7 @@ public interface PresenterContract {
     }
 
     interface ReminderPresenter {
-        Reminder getReminder();
+        Reminder getReminder(UUID id);
         void setReminder(Reminder reminder);
         void deleteReminder(UUID id);
     }
