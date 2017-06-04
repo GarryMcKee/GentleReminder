@@ -13,5 +13,11 @@ public interface PresenterContract {
     interface ReminderListPresenter {
         List<Reminder> getReminderList();
         Reminder getReminderAt(int position);
+        void addReminder(Reminder reminder);
+    }
+
+    interface ReminderPresenter {
+        Reminder getReminder();
+        void setReminder(Reminder reminder);
     }
 }

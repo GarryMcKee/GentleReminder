@@ -16,10 +16,12 @@ public class Reminder {
 
     public Reminder() {
         mUUID = UUID.randomUUID();
+        mLastModified = new Date();
     }
 
     public Reminder(UUID uuid) {
         mUUID = uuid;
+        mLastModified = new Date();
     }
 
     public UUID getUUID() {

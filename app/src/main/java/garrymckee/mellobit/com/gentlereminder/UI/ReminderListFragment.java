@@ -7,12 +7,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
+import java.util.UUID;
 
 import Model.Reminder;
 import Model.ReminderRepository;
@@ -47,12 +49,20 @@ public class ReminderListFragment extends Fragment {
         addReminderButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ReminderActivity.class);
+                Reminder reminder = new Reminder();
+                mPresenter.addReminder(reminder);
+                Intent intent = ReminderActivity.getIntent(getActivity(), reminder.getUUID());
                 startActivity(intent);
             }
         });
 
         return v;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        refreshUi();
     }
 
     private void refreshUi() {

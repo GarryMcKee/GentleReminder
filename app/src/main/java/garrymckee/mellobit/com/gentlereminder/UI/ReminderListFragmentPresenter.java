@@ -29,4 +29,9 @@ public class ReminderListFragmentPresenter implements PresenterContract.Reminder
     public Reminder getReminderAt(int position) {
         return mReminderRepository.getReminders().get(position);
     }
+
+    @Override
+    public void addReminder(Reminder reminder) {
+        mReminderRepository.addReminder(reminder);
+    }
 }
