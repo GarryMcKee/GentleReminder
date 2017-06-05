@@ -94,6 +94,11 @@ public class ReminderFragment extends Fragment {
         String subject = reminderSubjectEditText.getText().toString();
         String body = reminderBodyEditText.getText().toString();
 
+        if(subject.trim().isEmpty()  && body.trim().isEmpty()) {
+            mPresenter.deleteReminder(reminderId);
+            return;
+        }
+
         Reminder reminder = new Reminder(reminderId);
         reminder.setSubject(subject);
         reminder.setBody(body);
