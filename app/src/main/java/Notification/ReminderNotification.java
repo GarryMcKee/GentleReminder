@@ -47,7 +47,6 @@ public class ReminderNotification {
         NotificationManager notificationManager = (NotificationManager)mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(0, mNotification);
-
     }
 
 
