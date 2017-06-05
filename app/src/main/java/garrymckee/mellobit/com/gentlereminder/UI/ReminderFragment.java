@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.UUID;
 
 import Model.Reminder;
+import Notification.ReminderNotification;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import garrymckee.mellobit.com.gentlereminder.R;
@@ -74,13 +75,17 @@ public class ReminderFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.delete_reminder_item :
-                UUID reminderId = getReminderId();
-                mPresenter.deleteReminder(reminderId);
+                mPresenter.deleteReminder(getReminderId());
                 getActivity().finish();
                 break;
             case R.id.add_reminder_button:
                 //Add Reminder
                 break;
+            case R.id.dummy_notification_item:
+                Reminder reminder = mPresenter.getReminder(getReminderId());
+                reminder.setSubject(reminderSubjectEditText.getText().toString());
+                reminder.setBody(reminderBodyEditText.getText().toString());
+                new ReminderNotification(reminder, getActivity());
         }
 
         return true;

@@ -13,4 +13,10 @@
         android:title="@string/set_reminder_alarm"
         android:icon="@drawable/ic_add_reminder_alarm"
         app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/dummy_notification_item"
+        android:title="Test Notification"
+        android:icon="@android:drawable/ic_menu_add"
+        app:showAsAction="ifRoom|withText"/>
 </menu>
