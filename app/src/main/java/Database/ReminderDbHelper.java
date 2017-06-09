@@ -26,6 +26,9 @@ public class ReminderDbHelper extends SQLiteOpenHelper {
                 ReminderDataBaseSchema.ReminderTable.Cols.UUID + "," +
                 ReminderDataBaseSchema.ReminderTable.Cols.SUBJECT + "," +
                 ReminderDataBaseSchema.ReminderTable.Cols.BODY + "," +
+                ReminderDataBaseSchema.ReminderTable.Cols.ALARM_HOUR + "," +
+                ReminderDataBaseSchema.ReminderTable.Cols.ALARM_MINUTE + "," +
+                ReminderDataBaseSchema.ReminderTable.Cols.HAS_ALARM + "," +
                 ReminderDataBaseSchema.ReminderTable.Cols.DATE +
                 ")");
     }

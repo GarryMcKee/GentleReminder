@@ -12,7 +12,10 @@ public class Reminder {
     private UUID mUUID;
     private String mSubject;
     private String mBody;
+    private int mAlarmHour;
+    private int mAlarmMinute;
     private Date mLastModified;
+    private boolean mHasAlarm;
 
     public Reminder() {
         mUUID = UUID.randomUUID();
@@ -42,6 +45,30 @@ public class Reminder {
 
     public String getBody() {
         return mBody;
+    }
+
+    public void setAlarmHour(int alarmHour) {
+        mAlarmHour = alarmHour;
+    }
+
+    public int getAlarmHour() {
+        return mAlarmHour;
+    }
+
+    public void setAlarmMinute(int alarmMinute) {
+        mAlarmMinute = alarmMinute;
+    }
+
+    public int getAlarmMinute() {
+        return mAlarmMinute;
+    }
+
+    public void setHasAlarm(boolean hasAlarm) {
+        mHasAlarm = hasAlarm;
+    }
+
+    public boolean isHasAlarm() {
+        return mHasAlarm;
     }
 
     public void setLastModified(Date lastModified) {

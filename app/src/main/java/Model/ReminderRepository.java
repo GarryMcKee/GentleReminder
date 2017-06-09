@@ -89,6 +89,9 @@ public class ReminderRepository {
         values.put(ReminderDataBaseSchema.ReminderTable.Cols.UUID, reminder.getUUID().toString());
         values.put(ReminderDataBaseSchema.ReminderTable.Cols.SUBJECT, reminder.getSubject());
         values.put(ReminderDataBaseSchema.ReminderTable.Cols.BODY, reminder.getBody());
+        values.put(ReminderDataBaseSchema.ReminderTable.Cols.ALARM_HOUR, reminder.getAlarmHour());
+        values.put(ReminderDataBaseSchema.ReminderTable.Cols.ALARM_MINUTE, reminder.getAlarmMinute());
+        values.put(ReminderDataBaseSchema.ReminderTable.Cols.HAS_ALARM, reminder.isHasAlarm() ? 1 : 0);
         values.put(ReminderDataBaseSchema.ReminderTable.Cols.DATE, reminder.getLastModified().getTime());
 
         return values;

@@ -6,4 +6,7 @@
     <!-- Menu Titles !-->
     <string name="delete_reminder">Delete Reminder</string>
     <string name="set_reminder_alarm">Set Reminder Alarm</string>
+
+    <string name="alarm_time_picker_title">Remind Me At:</string>
+    <string name="alarm_time_picker_confirm">Set Reminder</string>
 </resources>

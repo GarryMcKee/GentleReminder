@@ -1,8 +1,10 @@
 package garrymckee.mellobit.com.gentlereminder.UI;
 
+import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.TimePicker;
 
 import java.util.Date;
 import java.util.UUID;
@@ -25,9 +28,9 @@ import garrymckee.mellobit.com.gentlereminder.R;
  * Created by Garry on 01/06/2017.
  */
 
-public class ReminderFragment extends Fragment {
+public class ReminderFragment extends Fragment implements TimePickerDialog.OnTimeSetListener{
 
-    public static final String ARGS_REMINDER_ID = "reminder_id";
+    private static final String ARGS_REMINDER_ID = "reminder_id";
 
     PresenterContract.ReminderPresenter mPresenter;
 
@@ -36,6 +39,8 @@ public class ReminderFragment extends Fragment {
 
     @BindView(R.id.reminder_edit_body)
     EditText reminderBodyEditText;
+
+    private Reminder mReminder;
 
     public static Fragment newInstance(UUID uuid) {
 
@@ -52,6 +57,7 @@ public class ReminderFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         mPresenter = new ReminderPresenter(getActivity());
+        mReminder = new Reminder(getReminderId());
     }
 
     @Nullable
@@ -78,8 +84,9 @@ public class ReminderFragment extends Fragment {
                 mPresenter.deleteReminder(getReminderId());
                 getActivity().finish();
                 break;
-            case R.id.add_reminder_button:
-                //Add Reminder
+            case R.id.set_reminder_alarm_item:
+                AlarmTimeFragment alarmTimeFragment = new AlarmTimeFragment(getActivity(), this, 0, 0, false);
+                alarmTimeFragment.show();
                 break;
             case R.id.dummy_notification_item:
                 Reminder reminder = mPresenter.getReminder(getReminderId());
@@ -95,25 +102,28 @@ public class ReminderFragment extends Fragment {
     public void onPause() {
         super.onPause();
 
-        UUID reminderId = getReminderId();
         String subject = reminderSubjectEditText.getText().toString();
         String body = reminderBodyEditText.getText().toString();
 
         if(subject.trim().isEmpty()  && body.trim().isEmpty()) {
-            mPresenter.deleteReminder(reminderId);
+            mPresenter.deleteReminder(getReminderId());
             return;
         }
 
-        Reminder reminder = new Reminder(reminderId);
-        reminder.setSubject(subject);
-        reminder.setBody(body);
-        reminder.setLastModified(new Date());
+        mReminder.setSubject(subject);
+        mReminder.setBody(body);
+        mReminder.setLastModified(new Date());
 
-        mPresenter.setReminder(reminder);
-        Log.d("CHECKSAVE", "Saved reminder!");
+        mPresenter.setReminder(mReminder);
     }
 
     private UUID getReminderId() {
         return (UUID) getArguments().getSerializable(ARGS_REMINDER_ID);
+    }
+
+    @Override
+    public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+        mReminder.setAlarmHour(hourOfDay);
+        mReminder.setAlarmMinute(minute);
     }
 }
