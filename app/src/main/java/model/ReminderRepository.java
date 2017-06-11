@@ -1,23 +1,17 @@
-package Model;
+package model;
 
-import android.app.Application;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import Database.ReminderCursorWrapper;
-import Database.ReminderDataBaseSchema;
-import Database.ReminderDbHelper;
-
-import static Database.ReminderDataBaseSchema.ReminderTable.*;
+import database.ReminderCursorWrapper;
+import database.ReminderDataBaseSchema;
+import database.ReminderDbHelper;
 
 /**
  * Created by Garry on 01/06/2017.

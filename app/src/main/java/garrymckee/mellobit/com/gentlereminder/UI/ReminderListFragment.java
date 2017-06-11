@@ -7,17 +7,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import java.util.List;
-import java.util.UUID;
 
-import Model.Reminder;
-import Model.ReminderRepository;
+import model.Reminder;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import garrymckee.mellobit.com.gentlereminder.R;

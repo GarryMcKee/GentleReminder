@@ -1,4 +1,4 @@
-package Database;
+package database;
 
 import android.database.Cursor;
 import android.database.CursorWrapper;
@@ -6,7 +6,7 @@ import android.database.CursorWrapper;
 import java.util.Date;
 import java.util.UUID;
 
-import Model.Reminder;
+import model.Reminder;
 
 /**
  * Created by Garry on 04/06/2017.

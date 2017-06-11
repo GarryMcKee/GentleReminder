@@ -4,7 +4,6 @@ import android.app.TimePickerDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -18,8 +17,9 @@ import android.widget.TimePicker;
 import java.util.Date;
 import java.util.UUID;
 
-import Model.Reminder;
-import Notification.ReminderNotification;
+import alarm.ReminderAlarm;
+import model.Reminder;
+import notifications.ReminderNotification;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import garrymckee.mellobit.com.gentlereminder.R;
@@ -57,7 +57,7 @@ public class ReminderFragment extends Fragment implements TimePickerDialog.OnTim
         super.onCreate(savedInstanceState);
         setHasOptionsMenu(true);
         mPresenter = new ReminderPresenter(getActivity());
-        mReminder = new Reminder(getReminderId());
+        mReminder = mPresenter.getReminder(getReminderId());
     }
 
     @Nullable
@@ -92,7 +92,7 @@ public class ReminderFragment extends Fragment implements TimePickerDialog.OnTim
                 Reminder reminder = mPresenter.getReminder(getReminderId());
                 reminder.setSubject(reminderSubjectEditText.getText().toString());
                 reminder.setBody(reminderBodyEditText.getText().toString());
-                new ReminderNotification(reminder, getActivity());
+                new ReminderNotification(reminder.getSubject(), reminder.getBody(), reminder.getUUID(), getActivity());
         }
 
         return true;
@@ -125,5 +125,10 @@ public class ReminderFragment extends Fragment implements TimePickerDialog.OnTim
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         mReminder.setAlarmHour(hourOfDay);
         mReminder.setAlarmMinute(minute);
+        mReminder.setHasAlarm(true);
+
+        ReminderAlarm.registerAlarm(mReminder, getActivity());
+
+        Log.d("CHECKALARMSET", "set an alarm!");
     }
 }

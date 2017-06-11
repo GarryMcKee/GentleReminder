@@ -1,11 +1,10 @@
-package Database;
+package database;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import static Database.ReminderDataBaseSchema.ReminderTable.*;
-import static Database.ReminderDataBaseSchema.ReminderTable.Cols.*;
+import static database.ReminderDataBaseSchema.ReminderTable.*;
 
 /**
  * Created by Garry on 04/06/2017.

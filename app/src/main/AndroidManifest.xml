@@ -20,6 +20,11 @@
 
         <activity android:name=".UI.ReminderActivity"/>
 
+        <receiver android:name="alarm.ReminderAlarm">
+            <action android:name="android.intent.action.BOOT_COMPLETED" />
+        </receiver>
+        <receiver android:name="notifications.NotificationReceiver"></receiver>
+
     </application>
 
 </manifest>

@@ -4,8 +4,8 @@ import android.content.Context;
 
 import java.util.List;
 
-import Model.Reminder;
-import Model.ReminderRepository;
+import model.Reminder;
+import model.ReminderRepository;
 
 /**
  * Created by Garry on 01/06/2017.

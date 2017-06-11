@@ -4,8 +4,8 @@ import android.content.Context;
 
 import java.util.UUID;
 
-import Model.Reminder;
-import Model.ReminderRepository;
+import model.Reminder;
+import model.ReminderRepository;
 
 /**
  * Created by Garry on 04/06/2017.
