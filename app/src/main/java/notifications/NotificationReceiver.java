@@ -23,8 +23,6 @@ public class NotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        Log.d("CHECKALARMTRIG", "ALARM WAS TRIGGERED");
-
         String subject = intent.getStringExtra(EXTRA_REMINDER_SUBJECT);
         String body = intent.getStringExtra(EXTRA_REMINDER_BODY);
         UUID reminderId = (UUID) intent.getSerializableExtra(EXTRA_REMINDER_UUID);

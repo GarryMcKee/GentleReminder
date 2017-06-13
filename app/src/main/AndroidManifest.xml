@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".UI.ReminderActivity"/>
+        <activity android:name=".UI.ReminderActivity"
+                  android:windowSoftInputMode="adjustPan"/>
 
         <receiver android:name="alarm.ReminderAlarm">
             <action android:name="android.intent.action.BOOT_COMPLETED" />

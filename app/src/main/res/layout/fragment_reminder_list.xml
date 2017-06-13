@@ -4,7 +4,7 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
-              android:background="@color/colorNoteBackground">
+              android:background="@color/colorPageWhite">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/reminder_list"
@@ -20,7 +20,7 @@
         android:layout_marginEnd="@dimen/default_padding"
         android:layout_marginBottom="@dimen/default_padding"
         android:clickable="true"
-        android:tint="@color/colorNoteBackground"
+        android:tint="@color/colorPageWhite"
         app:backgroundTint="@color/colorPrimary"
         app:fabSize="normal"
         app:srcCompat="@android:drawable/ic_input_add"/>

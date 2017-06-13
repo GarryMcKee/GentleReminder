@@ -3,6 +3,9 @@
     <color name="colorPrimary">#ce5a57</color>
     <color name="colorPrimaryDark">#994340</color>
     <color name="colorAccent">#E1B16A</color>
-    <color name="colorNoteBackground">#F4F4EF</color>
+    <color name="colorPageWhite">#F4F4EF</color>
     <color name="colorDefaultFont">#333333</color>
+    <color name="colorInactiveAlarmIcon">#666666</color>
+    <color name="colorInactiveAlarmPanel">#AAAAAA</color>
+    <color name="colorActiveAlarmPanel">#F4F4EF</color>
 </resources>

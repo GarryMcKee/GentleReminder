@@ -34,11 +34,19 @@ public class ReminderNotification {
         mContext = context;
         Uri sonificationUri = Uri.parse("android.resource://" + context.getPackageName() + "/" + R.raw.sonification1);
         String contentTitle = subject;
+        if(contentTitle == null) {
+            contentTitle = "";
+        }
+
         if(contentTitle.length() >CONTENT_TITLE_CHAR_LIMIT) {
             contentTitle = contentTitle.substring(0, 26) + "...";
         }
 
         String contentText = body;
+        if(contentText == null) {
+            contentText = "";
+        }
+
         if(contentText.length() > CONTENT_TEXT_CHAR_LIMIT) {
             contentText = contentText.substring(0, 36) + "...";
         }

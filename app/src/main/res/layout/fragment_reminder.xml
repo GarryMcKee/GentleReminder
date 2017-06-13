@@ -1,23 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-    android:padding="@dimen/default_padding">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <EditText
-        android:id="@+id/reminder_edit_subject"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textStyle="bold"
-        android:textSize="24sp"
-        android:hint="Subject"/>
+        android:orientation="vertical"
+        android:padding="@dimen/default_padding"
+        android:isScrollContainer="true">
 
-    <EditText
-        android:id="@+id/reminder_edit_body"
+        <EditText
+            android:id="@+id/reminder_edit_subject"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            android:hint="Subject"/>
+
+        <EditText
+            android:id="@+id/reminder_edit_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Body"/>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Body"
-        />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        app:cardElevation="32dp">
 
-</LinearLayout>
+        <RelativeLayout
+            android:id="@+id/alarm_panel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorInactiveAlarmPanel"
+            android:padding="@dimen/default_padding">
+
+            <ImageView
+                android:id="@+id/alarm_set_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/ic_alarm_off_black_36dp"
+                android:tint="@color/colorInactiveAlarmIcon"/>
+
+            <TextView
+                android:id="@+id/alarm_time_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/alarm_set_icon"
+                android:gravity="center"
+                android:paddingLeft="@dimen/default_padding"
+                android:text="@string/no_alarm_set"
+                android:textColor="@color/colorAccent"
+                android:textSize="@dimen/alarm_panel_font_size"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:id="@+id/clear_alarm_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/ic_clear_black_36dp"
+                android:tint="@color/colorPrimary"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

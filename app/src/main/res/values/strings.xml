@@ -8,5 +8,7 @@
     <string name="set_reminder_alarm">Set Reminder Alarm</string>
 
     <string name="alarm_time_picker_title">Remind Me At:</string>
-    <string name="alarm_time_picker_confirm">Set Reminder</string>
+    <string name="alarm_time_picker_confirm">Add Reminder</string>
+    <string name="add_alarm_text">Add Reminder</string>
+    <string name="no_alarm_set">Reminder Not Set</string>
 </resources>
